@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>昱昱的剧本生成器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['"Noto Serif SC"', 'serif'],
+            },
+            colors: {
+              'deep-space': '#0f172a',
+              'mystic-gold': '#d4af37',
+              'ethereal-purple': '#6366f1',
+              'bamboo-green': '#10b981', // Day Mode Primary
+              'sage-text': '#0f5132',    // Day Mode Text
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        /* Default to dark mode colors initially to prevent flash, App.tsx will handle toggle */
+        background-color: #020617; 
+        color: #e2e8f0;
+      }
+      .light-mode-body {
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+      /* Day mode scrollbar overrides */
+      .dark ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      html:not(.dark) ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+      }
+      html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
